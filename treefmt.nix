@@ -1,6 +1,6 @@
 { pkgs, inputs, ... }:
 let
-  pyPkgs = localPkgs.python3Packages;
+  pyPkgs = pkgs.python3Packages;
   buildPy = pyPkgs.buildPythonPackage;
 
   mdformat-ruff = buildPy rec {
