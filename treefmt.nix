@@ -1,7 +1,5 @@
 { pkgs, inputs, ... }:
 let
-  # 1. Apply the overlay locally so it doesn't pollute the consuming project
-  localPkgs = pkgs.extend inputs.mdformat-pandoc.overlays.default;
   pyPkgs = localPkgs.python3Packages;
   buildPy = pyPkgs.buildPythonPackage;
 
