@@ -54,7 +54,7 @@ let
   };
 
   # Construct the fully loaded mdformat package
-  mdformat-custom = pyPkgs.mdformat.withPlugins (p: [
+  mdformat-custom = pkgs.mdformat.withPlugins (p: [
     mdformat-ruff
     mdformat-shfmt
     mdformat-yamlfmt
