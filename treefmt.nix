@@ -42,16 +42,29 @@ let
     propagatedBuildInputs = [ pyPkgs.mdformat ];
   };
 
+  # mdformat-pandoc = buildPy {
+  #   pname = "mdformat-pandoc";
+  #   version = "custom";
+  #
+  #   src = inputs.mdformat-pandoc;
+  #   format = "pyproject"; 
+  #   nativeBuildInputs = [ pyPkgs.setuptools ]; 
+  #   propagatedBuildInputs = [ pyPkgs.mdformat ];
+  # };
+
   mdformat-pandoc = buildPy {
-    pname = "mdformat-pandoc";
-    version = "custom";
-    
-    # 💥 The magic: Feed the flake input directly as the source
-    src = inputs.mdformat-pandoc;
-    format = "pyproject"; 
-    nativeBuildInputs = [ pyPkgs.setuptools ]; 
-    propagatedBuildInputs = [ pyPkgs.mdformat ];
+  pname = "mdformat-pandoc";
+  # version = "3.8.0";
+  format = "pyproject";
+
+  src = pkgs.fetchurl {
+    url = "git+ssh://git@github.com/jkub6/mdformat-pandoc";
+    hash = "";
   };
+
+  propagatedBuildInputs = [ pyPkgs.mdformat ];
+};
+ 
 
   # Construct the fully loaded mdformat package
   mdformat-custom = pkgs.mdformat.withPlugins (p: [
@@ -64,14 +77,12 @@ in
 {
   projectRootFile = "flake.nix";
 
-  settings.global.excludes = ["sources/**"];
   settings.global.on-unmatched = "info";
 
   programs.alejandra.enable = true;
   programs.ruff.format = true;
   programs.yamlfmt.enable = true;
   programs.shfmt.enable = true;
-
   programs.stylua.enable = true;
   settings.formatter.stylua.options = [ "--column-width" "100" ];
 
