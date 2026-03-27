@@ -11,7 +11,6 @@
       inherit pkgs inputs; 
     };
 
-    # for debugging
-    debug = nixpkgs.legacyPackages.x86_64-linux.callPackage ./treefmt.nix { inherit inputs; };
+    packages.x86_64-linux.mdformat-custom = (nixpkgs.legacyPackages.x86_64-linux.callPackage ./treefmt.nix { inherit inputs; }).mdformat-custom;
   };
 }
