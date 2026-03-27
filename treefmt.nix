@@ -53,7 +53,7 @@ let
   # };
 
   mdformat-pandoc = buildPy {
-    pname = "mdformat-pandoc";
+    pname = "mdformat_pandoc";
     version = "0.1.0";
     format = "pyproject";
 
