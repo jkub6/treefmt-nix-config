@@ -1,7 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 let
-  # Use standard Nixpkgs Python for building formatting plugins
-  pyPkgs = pkgs.python3Packages;
+  # 1. Apply the overlay locally so it doesn't pollute the consuming project
+  localPkgs = pkgs.extend inputs.mdformat-pandoc.overlays.default;
+  pyPkgs = localPkgs.python3Packages;
   buildPy = pyPkgs.buildPythonPackage;
 
   mdformat-ruff = buildPy rec {
@@ -48,19 +49,15 @@ let
     mdformat-ruff
     mdformat-shfmt
     mdformat-yamlfmt
-    # This relies on the consuming project (like Dojo) providing 
-    # the mdformat-pandoc overlay. If it does, it injects perfectly!
-    p.mdformat-pandoc 
+    p.mdformat-pandoc
   ]);
 in
 {
   projectRootFile = "flake.nix";
 
-  # Global Settings
   settings.global.excludes = ["sources/**"];
   settings.global.on-unmatched = "info";
 
-  # Translating your treefmt.toml programs
   programs.alejandra.enable = true;
   programs.ruff.format = true;
   programs.yamlfmt.enable = true;
