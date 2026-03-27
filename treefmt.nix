@@ -100,7 +100,4 @@ in
     "--end-of-line" "lf"
     "--extensions" "pandoc"
   ];
-
-  # Export for debugging or other uses
-  mdformat-custom = mdformat-custom;
 }

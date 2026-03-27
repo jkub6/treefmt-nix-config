@@ -10,7 +10,5 @@
     treefmtModule = { pkgs, ... }: import ./treefmt.nix { 
       inherit pkgs inputs; 
     };
-
-    packages.x86_64-linux.mdformat-custom = (nixpkgs.legacyPackages.x86_64-linux.callPackage ./treefmt.nix { inherit inputs; }).mdformat-custom;
   };
 }
