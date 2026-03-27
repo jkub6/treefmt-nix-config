@@ -2,7 +2,7 @@
   description = "Centralized treefmt configuration";
 
   inputs = {
-    mdformat-pandoc.url = "github:jkub6/mdformat-pandoc";
+    mdformat-pandoc.url = "git+ssh://git@github.com/jkub6/mdformat-pandoc";
     # You can add inputs.nixpkgs.follows = "nixpkgs"; here if you want 
     # to enforce it uses the downstream project's nixpkgs version.
   };
