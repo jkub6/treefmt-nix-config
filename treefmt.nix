@@ -53,17 +53,23 @@ let
   # };
 
   mdformat-pandoc = buildPy {
-  pname = "mdformat-pandoc";
-  # version = "3.8.0";
-  format = "pyproject";
+    pname = "mdformat-pandoc";
+    version = "0.1.0";
+    format = "pyproject";
 
-  src = pkgs.fetchurl {
-    url = "git+ssh://git@github.com/jkub6/mdformat-pandoc";
-    hash = "";
+    src = inputs.mdformat-pandoc;
+
+    propagatedBuildInputs = with pyPkgs; [
+      mdformat
+      markdown-it-py
+      mdit-py-plugins
+      linkify-it-py
+    ];
+
+    nativeBuildInputs = [pyPkgs.flit-core];
+
+    doCheck = false;
   };
-
-  propagatedBuildInputs = [ pyPkgs.mdformat ];
-};
 
   # Construct the fully loaded mdformat package
   mdformat-custom = pkgs.mdformat.withPlugins (p: [
