@@ -44,12 +44,23 @@ let
     propagatedBuildInputs = [ pyPkgs.mdformat ];
   };
 
+  mdformat-pandoc = buildPy {
+    pname = "mdformat-pandoc";
+    version = "custom";
+    
+    # 💥 The magic: Feed the flake input directly as the source
+    src = inputs.mdformat-pandoc;
+    format = "pyproject"; 
+    nativeBuildInputs = [ pyPkgs.setuptools ]; 
+    propagatedBuildInputs = [ pyPkgs.mdformat ];
+  };
+
   # Construct the fully loaded mdformat package
   mdformat-custom = pyPkgs.mdformat.withPlugins (p: [
     mdformat-ruff
     mdformat-shfmt
     mdformat-yamlfmt
-    p.mdformat-pandoc
+    mdformat-pandoc
   ]);
 in
 {
