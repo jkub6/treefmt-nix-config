@@ -58,7 +58,7 @@ let
 
     nativeBuildInputs = [pyPkgs.flit-core];
 
-    doCheck = false;
+    doCheck = true;
   };
 
   # Construct the fully loaded mdformat package
