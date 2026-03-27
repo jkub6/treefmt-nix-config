@@ -52,31 +52,31 @@ let
   #   propagatedBuildInputs = [ pyPkgs.mdformat ];
   # };
 
-  mdformat-pandoc = buildPy {
-    pname = "mdformat_pandoc";
-    version = "0.1.0";
-    format = "pyproject";
+  # mdformat-pandoc = buildPy {
+  #   pname = "mdformat_pandoc";
+  #   version = "0.1.0";
+  #   format = "pyproject";
 
-    src = inputs.mdformat-pandoc;
+  #   src = inputs.mdformat-pandoc;
 
-    propagatedBuildInputs = with pyPkgs; [
-      mdformat
-      markdown-it-py
-      mdit-py-plugins
-      linkify-it-py
-    ];
+  #   propagatedBuildInputs = with pyPkgs; [
+  #     mdformat
+  #     markdown-it-py
+  #     mdit-py-plugins
+  #     linkify-it-py
+  #   ];
 
-    nativeBuildInputs = [pyPkgs.flit-core];
+  #   nativeBuildInputs = [pyPkgs.flit-core];
 
-    doCheck = false;
-  };
+  #   doCheck = false;
+  # };
 
   # Construct the fully loaded mdformat package
   mdformat-custom = pkgs.mdformat.withPlugins (p: [
     mdformat-ruff
     mdformat-shfmt
     mdformat-yamlfmt
-    mdformat-pandoc
+    inputs.mdformat-pandoc.packages.${pkgs.system}.default
   ]);
 in
 {
