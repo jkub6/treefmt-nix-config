@@ -2,14 +2,14 @@
   description = "Centralized treefmt configuration";
 
   inputs = {
-    mdformat-pandoc.url = "git+ssh://git@github.com/jkub6/mdformat-pandoc";
-    # You can add inputs.nixpkgs.follows = "nixpkgs"; here if you want 
-    # to enforce it uses the downstream project's nixpkgs version.
+    # Fetch your remote repo, but we just want the source tree
+    mdformat-pandoc = {
+      url = "git+ssh://git@github.com/jkub6/mdformat-pandoc";
+      flake = false; 
+    };
   };
 
   outputs = { self, ... }@inputs: {
-    # Export the module as a function that accepts the consumer's `pkgs`
-    # and passes along our local `inputs`
     treefmtModule = { pkgs, ... }: import ./treefmt.nix { 
       inherit pkgs inputs; 
     };
