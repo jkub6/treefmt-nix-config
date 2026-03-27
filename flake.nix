@@ -10,5 +10,8 @@
     treefmtModule = { pkgs, ... }: import ./treefmt.nix { 
       inherit pkgs inputs; 
     };
+
+    # for debugging
+    debug = nixpkgs.legacyPackages.x86_64-linux.callPackage ./treefmt.nix { inherit inputs; };
   };
 }
