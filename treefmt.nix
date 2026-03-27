@@ -91,9 +91,9 @@ in
   programs.stylua.enable = true;
   settings.formatter.stylua.options = [ "--column-width" "100" ];
 
-  # Inject your custom-built mdformat
   programs.mdformat.enable = true;
   programs.mdformat.package = mdformat-custom;
+  settings.formatter.mdformat.command = "${mdformat-custom}/bin/mdformat";
   settings.formatter.mdformat.options = [
     "--wrap" "100"
     "--number"
