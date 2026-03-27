@@ -64,7 +64,6 @@ let
 
   propagatedBuildInputs = [ pyPkgs.mdformat ];
 };
- 
 
   # Construct the fully loaded mdformat package
   mdformat-custom = pkgs.mdformat.withPlugins (p: [
