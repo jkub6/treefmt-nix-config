@@ -70,7 +70,7 @@ let
   ]);
 in
 {
-  treeRootCmd = "git rev-parse --show-toplevel";
+  tree-root-cmd = "git rev-parse --show-toplevel";
   walk = "git";
 
   settings.global.on-unmatched = "info";
