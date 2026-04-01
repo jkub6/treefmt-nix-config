@@ -70,9 +70,8 @@ let
   ]);
 in
 {
-  tree-root-cmd = "git rev-parse --show-toplevel";
-  walk = "git";
-
+  settings.global.tree-root-cmd = "git rev-parse --show-toplevel";
+  settings.global.walk = "git";
   settings.global.on-unmatched = "info";
 
   programs.alejandra.enable = true;
