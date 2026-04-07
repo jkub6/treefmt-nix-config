@@ -24,11 +24,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1774996712,
-        "narHash": "sha256-b7z0zp/SdyvLlszA3EfPWeDpDLUOZGcYuqsbl5EpcDY=",
+        "lastModified": 1775601920,
+        "narHash": "sha256-fi4f4dztDC2ennIxqB7yoRsvSnpxvT0SjKSKUarlJwA=",
         "ref": "refs/heads/main",
-        "rev": "8b16b8ef37b1e3da89a7de26de335de8bf886932",
-        "revCount": 5,
+        "rev": "43a67d36116e9259fe52575e82989aeb325116dc",
+        "revCount": 6,
         "type": "git",
         "url": "ssh://git@github.com/jkub6/mdformat-pandoc"
       },
