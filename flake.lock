@@ -24,11 +24,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1775601920,
-        "narHash": "sha256-fi4f4dztDC2ennIxqB7yoRsvSnpxvT0SjKSKUarlJwA=",
+        "lastModified": 1775602316,
+        "narHash": "sha256-7dMSAI70pyN07hOdF829T4tQHikD/cATyI9naKau6pU=",
         "ref": "refs/heads/main",
-        "rev": "43a67d36116e9259fe52575e82989aeb325116dc",
-        "revCount": 6,
+        "rev": "6cabed0e3222d58a03f1ea5f3c6f78de7bab7cc5",
+        "revCount": 7,
         "type": "git",
         "url": "ssh://git@github.com/jkub6/mdformat-pandoc"
       },
@@ -39,11 +39,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1774386573,
-        "narHash": "sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc=",
+        "lastModified": 1775423009,
+        "narHash": "sha256-vPKLpjhIVWdDrfiUM8atW6YkIggCEKdSAlJPzzhkQlw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+        "rev": "68d8aa3d661f0e6bd5862291b5bb263b2a6595c9",
         "type": "github"
       },
       "original": {
