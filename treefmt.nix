@@ -81,6 +81,7 @@ in
     "-formatter" "\"type=basic,max_line_length=100,force_quote_style=double,line_ending=lf\""
   ];
   programs.shfmt.enable = true;
+  programs.taplo.enable = true;
   programs.stylua.enable = true;
   settings.formatter.stylua.options = [ "--column-width" "100" ];
   programs.stylua.settings = {
