@@ -1,5 +1,8 @@
-{ pkgs, inputs, ... }:
-let
+{
+  pkgs,
+  inputs,
+  ...
+}: let
   pyPkgs = pkgs.python3Packages;
   buildPy = pyPkgs.buildPythonPackage;
 
@@ -12,8 +15,8 @@ let
       inherit version;
       hash = "sha256-Ld0nWN0/ZzjBx7++uJMg0nFFT0zYwoqZlopQ01eLFdY=";
     };
-    nativeBuildInputs = [ pyPkgs.poetry-core ];
-    propagatedBuildInputs = [ pyPkgs.mdformat pyPkgs.ruff ];
+    nativeBuildInputs = [pyPkgs.poetry-core];
+    propagatedBuildInputs = [pyPkgs.mdformat pyPkgs.ruff];
   };
 
   mdformat-shfmt = buildPy rec {
@@ -25,8 +28,8 @@ let
       inherit version;
       hash = "sha256-DA9mK08Ro/sdF1z2KTMLCAV6/pHNwlloK8joVvzfC3o=";
     };
-    nativeBuildInputs = [ pyPkgs.poetry-core ];
-    propagatedBuildInputs = [ pyPkgs.mdformat ];
+    nativeBuildInputs = [pyPkgs.poetry-core];
+    propagatedBuildInputs = [pyPkgs.mdformat];
   };
 
   mdformat-yamlfmt = buildPy rec {
@@ -38,8 +41,8 @@ let
       inherit version;
       hash = "sha256-Zy/z77ETx6D8pzvoz8on+iojEtiHW1/TRdp6s7zNr+E=";
     };
-    nativeBuildInputs = [ pyPkgs.hatchling pyPkgs.ruff ];
-    propagatedBuildInputs = [ pyPkgs.mdformat ];
+    nativeBuildInputs = [pyPkgs.hatchling pyPkgs.ruff];
+    propagatedBuildInputs = [pyPkgs.mdformat];
   };
 
   mdformat_pandoc = buildPy {
@@ -68,8 +71,7 @@ let
     mdformat-yamlfmt
     mdformat_pandoc
   ]);
-in
-{
+in {
   settings.global.tree-root-cmd = "git rev-parse --show-toplevel";
   settings.global.walk = "git";
   settings.global.on-unmatched = "info";
@@ -78,12 +80,13 @@ in
   programs.ruff.format = true;
   programs.yamlfmt.enable = true;
   settings.formatter.yamlfmt.options = [
-    "-formatter" "\"type=basic,max_line_length=100,force_quote_style=double,line_ending=lf\""
+    "-formatter"
+    "\"type=basic,max_line_length=100,force_quote_style=double,line_ending=lf\""
   ];
   programs.shfmt.enable = true;
   programs.taplo.enable = true;
   programs.stylua.enable = true;
-  settings.formatter.stylua.options = [ "--column-width" "100" ];
+  settings.formatter.stylua.options = ["--column-width" "100"];
   programs.stylua.settings = {
     indent_type = "Spaces";
     indent_width = 2;
@@ -93,9 +96,12 @@ in
   programs.mdformat.package = mdformat-custom;
   settings.formatter.mdformat.command = "${mdformat-custom}/bin/mdformat";
   settings.formatter.mdformat.options = [
-    "--wrap" "100"
+    "--wrap"
+    "100"
     "--number"
-    "--end-of-line" "lf"
-    "--extensions" "pandoc"
+    "--end-of-line"
+    "lf"
+    "--extensions"
+    "pandoc"
   ];
 }
