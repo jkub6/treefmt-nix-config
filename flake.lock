@@ -44,11 +44,11 @@
         "treefmt-nix-config": "treefmt-nix-config"
       },
       "locked": {
-        "lastModified": 1777069904,
-        "narHash": "sha256-4hMg7Gbb7kh6HbNWX8dURsdNzgN2HI8DI6J5qjDQnQ4=",
+        "lastModified": 1777071058,
+        "narHash": "sha256-xxMdhqQAYEt/48K+mbHvsT4ZY67O6gpIMqrsut1ZS1o=",
         "ref": "refs/heads/main",
-        "rev": "25cda9cba541876a47fdab19c0bbd0baa9ea570b",
-        "revCount": 26,
+        "rev": "127ee6f20bd0ee76db1763df2da8a882524d8d6e",
+        "revCount": 27,
         "type": "git",
         "url": "ssh://git@github.com/jkub6/mdformat-pandoc"
       },
