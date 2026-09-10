@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    mdformat-pandoc.url = "git+ssh://git@github.com/jkub6/mdformat-pandoc";
+    mdformat-pandoc.url = "github:jkub6/mdformat-pandoc";
   };
 
   outputs = {
