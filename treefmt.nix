@@ -104,4 +104,6 @@ in {
     "--extensions"
     "pandoc"
   ];
+  programs.biome.enable = true;
+  settings.formatter.biome.excludes = [ "*.md" ];
 }
