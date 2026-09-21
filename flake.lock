@@ -26,11 +26,11 @@
         "treefmt-nix-config": "treefmt-nix-config"
       },
       "locked": {
-        "lastModified": 1789408118,
-        "narHash": "sha256-92lC2o85liWv2YDWOyLB6sE9YD4KYEtmkezMyFpx+AY=",
+        "lastModified": 1790020806,
+        "narHash": "sha256-jX6Moxih/HXD8NdBVyFsH6vKPiRsCiArvDTkLmyPos8=",
         "owner": "jkub6",
         "repo": "mdformat-pandoc",
-        "rev": "29d8f36ac5e92cd7cfbed85fc5a87e03f495effe",
+        "rev": "413e57619c3eddbe2879f22735e33a98cdf0d9dd",
         "type": "github"
       },
       "original": {
