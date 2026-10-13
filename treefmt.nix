@@ -106,4 +106,5 @@ in {
   ];
   programs.biome.enable = true;
   settings.formatter.biome.excludes = [ "*.md" ];
+  programs.just.enable = true;
 }
