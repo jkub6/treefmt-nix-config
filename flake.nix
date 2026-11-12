@@ -6,14 +6,13 @@
     mdformat-pandoc.url = "github:jkub6/mdformat-pandoc";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    mdformat-pandoc,
-  } @ inputs: {
-    treefmtModule = {pkgs, ...}:
-      import ./treefmt.nix {
-        inherit pkgs inputs;
-      };
-  };
+  outputs =
+    {
+      self,
+      nixpkgs,
+      mdformat-pandoc,
+    }@inputs:
+    {
+      treefmtModule = { pkgs, ... }: import ./treefmt.nix { inherit pkgs inputs; };
+    };
 }
